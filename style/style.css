@@ -1,0 +1,90 @@
+@import url(root.css);
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+#hero {
+  background-image: url("/files/img/hero.png");
+  width: 100%;
+  height: 90vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.511);
+}
+
+#carousel {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+}
+
+#carousel .content {
+    margin-top: 0;
+}
+
+#carousel img {
+    border-radius: 20px;
+}
+
+.logo {
+  width: 150px !important;
+}
+
+button {
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+/* Botón carrito flotante */
+.cart-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 16px;
+  z-index: 1000;
+}
+
+/* Contador */
+.count {
+  background: red;
+  border-radius: 50%;
+  padding: 2px 8px;
+  margin-left: 6px;
+  font-size: 14px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+.remove {
+  background: #eee;
+  border: none;
+  color: #900;
+  cursor: pointer;
+  margin-top: 5px;
+}

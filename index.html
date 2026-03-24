@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emme | Remeras Oversize y más</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/92dadc1c6f.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="files/img/logo-no-back-black.png" type="image/x-icon">
+    <meta name="theme-color" content="#000000">
+    <meta name="author" content="Emme Indumentaria & Accesorios">
+    <meta name="description" content="Emme es una pagina de venta de ropa online, 
+        enfocada en la venta por whatsapp, la idea es que el
+         usuario se sienta seguro de comprar entonces todo se 
+         realiza por whatsapp con el agente de ventas.">
+
+    <meta property="og:title" content="Emme Indumentaria & Accesorios">
+    <meta property="og:description" content="Emme es una pagina de venta de ropa online, 
+        enfocada en la venta por whatsapp, la idea es que el
+         usuario se sienta seguro de comprar entonces todo se 
+         realiza por whatsapp con el agente de ventas.">
+    <meta property="og:image" content="https://kevinflores198.github.io/emme//files/img/logo.jpeg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kevinflores198.github.io/lazo/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Esteban&family=Montserrat:ital,wght@0,300;1,300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css">
+    <script src="https://kit.fontawesome.com/92dadc1c6f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <nav class="nav2 w-full bg-black text-center text-sm text-white py-2 sticky top-0 left-0 right-0 z-50">
+        <a href="carousel">¡Descuentos en 3 prendas a partir de Abril!</a>
+    </nav>
+    <nav class="w-full bg-[#FFD900] sticky top-0 left-0 right-0 z-50">
+        <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
+            <a href="#hero" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span
+                    class="transition delay-150 duration-300 ease-in-out hover:text-[#F58549] hover:scale-110 self-center text-xl text-black text-heading font-semibold whitespace-nowrap"><img
+                        src="files/img/logo-no-back-black.png" alt="logo" class="w-16"></span>
+            </a>
+            <div class="inline-flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button" onclick="abrirCarrito()"
+                    class=" cart-btn transition delay-150 duration-300 ease-in-out hover:text-[#252525] hover:scale-110 rounded-lg text-black bg-[#ffd900] hover:bg-[#fff09b] box-border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
+                    <a class="" href="#cta">
+                        <i class="fa-solid fa-cart-arrow-down"></i><span id="contador" class="count">0</span>
+                    </a>
+                </button>
+                <button data-collapse-toggle="navbar-cta" type="button"
+                    class="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+                    aria-controls="navbar-cta" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
+                            d="M5 7h14M5 12h14M5 17h14" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                <ul class="font-medium flex flex-col 
+                    p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft
+                     md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
+                    <li>
+                        <a href="#hero" class="transition delay-150 
+                            duration-300 ease-in-out hover:scale-110
+                             block py-2 px-3 text-black bg-brand rounded md:bg-transparent
+                              md:text-fg-brand md:p-0">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#carousel" class="transition delay-150 
+                            duration-300 ease-in-out hover:scale-110
+                             block py-2 px-3 text-black rounded hover:bg-neutral-tertiary 
+                             md:hover:bg-transparent md:border-0 md:hover:text-fg-brand 
+                             md:p-0 md:dark:hover:bg-transparent">Productos</a>
+                    </li>
+                    <li>
+                        <a href="#about" class="transition delay-150 
+                            duration-300 ease-in-out hover:scale-110
+                             block py-2 px-3 text-black rounded hover:bg-neutral-tertiary 
+                             md:hover:bg-transparent md:border-0 md:hover:text-fg-brand 
+                             md:p-0 md:dark:hover:bg-transparent">Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section id="hero" class="items-center flex flex-col gap-6 px-4 py-20 pt-20">
+            <h1 data-aos="zoom-in"
+                class="text-[#d9d9d9]  mb-4 text-4xl font-bold tracking-tight text-heading md:text-4xl lg:text-8xl">
+                Elegi destacar
+            </h1>
+            <h1 data-aos="zoom-in"
+                class="text-[#d9d9d9]  mb-4 text-4xl font-bold tracking-tight text-heading md:text-4xl lg:text-8xl">
+                Elegi <span class="text-fg-brand text-[#FFD900]">EMME</span>
+            </h1>
+            <a data-aos="zoom-in" href="#cta" class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110
+                 w-40 rounded-lg items-center text-black bg-[#FFD900] hover:bg-[#fff09b] box-border border 
+                 border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs
+                  font-medium leading-5 rounded-base text-center px-5 py-3 focus:outline-none">
+                Contacto
+            </a>
+        </section>
+
+        
+    </main>
+    <footer class="bg-[#83422F]">
+        <div class="mx-auto w-full max-w-screen-xl">
+            <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Compañia</h2>
+                    <ul class="text-white font-medium">
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class=" hover:underline">Sobre nosotros</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Clientes</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Compra</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Ayuda</h2>
+                    <ul class="text-white font-medium">
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Discord</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Instagram</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Facebook</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Legal</h2>
+                    <ul class="text-white font-medium">
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Privacidad</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Licencias</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Terminos &amp; condiciones</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Contenido</h2>
+                    <ul class="text-white font-medium">
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Ofertas</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Nuevos lanzamientos</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Vieja temporada</a>
+                        </li>
+                        <li
+                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                            <a href="#" class="hover:underline">Cuero</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="px-4 py-6 bg-neutral-secondary-soft md:flex md:items-center md:justify-center">
+                <span class="text-sm text-white sm:text-center">© 2025 <a target="_blank" href="kevinflores.me">Designed
+                        by Confiweb Studio</a>. <br>All
+                    Rights Reserved.
+                </span>
+            </div>
+        </div>
+
+
+
+
+
+
+        
+    </footer>
+    
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 3000,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 2, // MOBILE → 2 CARDS
+                },
+                768: {
+                    slidesPerView: 3, // DESKTOP → 3 CARDS
+                }
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
+    <div class="arrowUp transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+        id="arrowUp">
+        <a href="#top"><i class="fa-solid fa-arrow-up arrow-confiweb"></i></a>
+    </div>
+    <div class="contactMe" id="contactMe">
+        <a target="_blank"
+            href="https://wa.me/5491128334733?text=Hola!%20Me%20gustó%20un%20producto%20de%20la%20tienda%20online..."><i
+                class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 fa-brands fa-whatsapp"></i></a>
+    </div>
+    <script>
+        window.addEventListener("scroll", () => {
+            const scroll = document.documentElement.scrollTop;
+            if (scroll > 100) {
+                arrowUp.style.right = 20 + "px";
+            } else {
+                arrowUp.style.right = -100 + "px";
+            }
+        })
+        window.addEventListener("scroll", () => {
+            const scroll = document.documentElement.scrollTop;
+            if (scroll > 100) {
+                contactMe.style.left = 20 + "px";
+            } else {
+                contactMe.style.left = -100 + "px";
+            }
+        })
+        const track = document.getElementById("carousel-track");
+        const next = document.getElementById("next-btn");
+        const prev = document.getElementById("prev-btn");
+
+        let index = 0;
+
+        function moveCarousel() {
+            index = (index + 1) % 2;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        next.addEventListener("click", () => {
+            index = (index + 1) % 2;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        });
+
+        prev.addEventListener("click", () => {
+            index = (index - 1 + 2) % 2;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        });
+        setInterval(moveCarousel, 2500);
+    </script>
+
+    <script src="scripts/script.js"></script>
+    <script src="scripts/content-confiweb.js"></script>
+
+    <script>
+        tailwind.config = {
+            plugins: [daisyui],
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.2/dist/simpleParallax.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-out-cubic',
+            offset: 120
+        });
+
+        new simpleParallax(document.querySelectorAll('.parallax'), {
+            scale: 1.2,
+            delay: 0.4
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
