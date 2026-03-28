@@ -53,11 +53,15 @@
                         src="files/img/logo-no-back-black.png" alt="logo" class="w-16"></span>
             </a>
             <div class="inline-flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button" onclick="abrirCarrito()"
-                    class=" cart-btn transition delay-150 duration-300 ease-in-out hover:text-[#252525] hover:scale-110 rounded-lg text-black bg-[#ffd900] hover:bg-[#fff09b] box-border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                    <a class="" href="#cta">
-                        <i class="fa-solid fa-cart-arrow-down"></i><span id="contador" class="count">0</span>
-                    </a>
+                <button type="button" onclick="abrirCarrito()" class="cart-btn transition delay-150 
+                    duration-300 ease-in-out hover:text-[#252525]
+                     hover:scale-110 rounded-lg text-black bg-[#ffd900]
+                      hover:bg-[#fff09b] box-border border-transparent 
+                      focus:ring-4 focus:ring-brand-medium shadow-xs 
+                      font-medium leading-5 rounded-base text-sm px-3 
+                      py-2 focus:outline-none">
+                    <i class="fa-solid fa-cart-arrow-down">
+                    </i><span id="contador" class="count">0</span>
                 </button>
                 <button data-collapse-toggle="navbar-cta" type="button"
                     class="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
@@ -115,130 +119,560 @@
                 Contacto
             </a>
         </section>
+        <section id="introduction" class="relative w-full h-[70vh] overflow-hidden">
+            <div class="absolute inset-0 bg-black/40"></div>
 
-        
-    </main>
-    <footer class="bg-[#83422F]">
-        <div class="mx-auto w-full max-w-screen-xl">
-            <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Compañia</h2>
-                    <ul class="text-white font-medium">
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class=" hover:underline">Sobre nosotros</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Clientes</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Compra</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Blog</a>
-                        </li>
-                    </ul>
+            <div class="relative z-10 h-full flex flex-col items-center justify-center text-white">
+                <div class="line mb-8"></div>
+                <h1 data-aos="zoom-in"
+                    class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-4xl font-semibold">
+                    Calidad que se nota. Estilo que se siente</h1>
+                <p data-aos="zoom-in"
+                    class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg">
+                    Diseños pensados para quienes quieren vestir diferente, sin perder comodidad.
+                </p>
+                <h2 class="text-2xl mt-2 mt-6">
+                    En EMME trabajamos con telas premium y cortes modernos para que cada prenda combine comodidad y
+                    presencia.</h2>
+                <button data-aos="zoom-in"
+                    onclick="window.open('https://wa.me/5491128334733?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20los%20productos%20de%20LAZO.%20%C2%BFMe%20podr%C3%ADas%20ayudar?', '_blank');"
+                    class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-8 bg-[#FFD900] hover:bg-[#FFF09B] text-[#2F0C02] px-6 py-3 rounded-lg font-medium hover:opacity-90">
+                    Contacto via WhatsApp
+            </div>
+
+        </section>
+        <section class="bg-[#252525]" id="carousel">
+            <div class="line"></div>
+            <h2 data-aos="fade-up"
+                class="w-full py-10 text-4xl text-center text-[#EBE3D0] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-4xl font-semibold">
+                New in</h2>
+            <div class="max-w-[1100px] mx-auto px-4">
+                <div class="content w-full  py-10">
+                    <div data-aos="zoom-in" class="swiper mySwiper py-10">
+                        <div class="swiper-wrapper">
+                            <div
+                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
+                                <a href="#">
+                                    <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
+                                </a>
+                                <div>
+                                    <div class="flex items-center space-x-3 p-3">
+                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                        </div>
+                                        <span
+                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
+                                            out of 5</span>
+                                    </div>
+                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
+                                        Boxy ultra
+                                    </h5>
+                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
+
+                                        <div class="flex flex-col gap-4 w-full">
+
+                                            <!-- Selects -->
+                                            <div class="flex gap-4 w-full">
+
+                                                <!-- Color -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
+                                                    <select
+                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>Negra</option>
+                                                        <option>Blanca</option>
+                                                        <option>Gris</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Talle -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
+                                                    <select
+                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>S</option>
+                                                        <option>M</option>
+                                                        <option>L</option>
+                                                        <option>XL</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
+
+                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
+                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
+                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                                            </svg>
+                                            Agregar a carrito
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div
+                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
+                                <a href="#">
+                                    <img src="files/img/mod-2.jpeg" class=" w-full object-cover p-1" />
+                                </a>
+                                <div>
+                                    <div class="flex items-center space-x-3 p-3">
+                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                        </div>
+                                        <span
+                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
+                                            out of 5</span>
+                                    </div>
+                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
+                                        Boxy ultra
+                                    </h5>
+                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
+
+                                        <div class="flex flex-col gap-4 w-full">
+
+                                            <!-- Selects -->
+                                            <div class="flex gap-4 w-full">
+
+                                                <!-- Color -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
+                                                    <select
+                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>Negra</option>
+                                                        <option>Blanca</option>
+                                                        <option>Gris</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Talle -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
+                                                    <select
+                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>S</option>
+                                                        <option>M</option>
+                                                        <option>L</option>
+                                                        <option>XL</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
+
+                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
+                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
+                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                                            </svg>
+                                            Agregar a carrito
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
+                                <a href="#">
+                                    <img src="files/img/mod-3.jpeg" class=" w-full object-cover p-1" />
+                                </a>
+                                <div>
+                                    <div class="flex items-center space-x-3 p-3">
+                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                        </div>
+                                        <span
+                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
+                                            out of 5</span>
+                                    </div>
+                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
+                                        Boxy ultra
+                                    </h5>
+                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
+
+                                        <div class="flex flex-col gap-4 w-full">
+
+                                            <!-- Selects -->
+                                            <div class="flex gap-4 w-full">
+
+                                                <!-- Color -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
+                                                    <select
+                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>Negra</option>
+                                                        <option>Blanca</option>
+                                                        <option>Gris</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Talle -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
+                                                    <select
+                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>S</option>
+                                                        <option>M</option>
+                                                        <option>L</option>
+                                                        <option>XL</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
+
+                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
+                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
+                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                                            </svg>
+                                            Agregar a carrito
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div
+                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
+                                <a href="#">
+                                    <img src="files/img/mod-5.jpeg" class=" w-full object-cover p-1" />
+                                </a>
+                                <div>
+                                    <div class="flex items-center space-x-3 p-3">
+                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                        </div>
+                                        <span
+                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
+                                            out of 5</span>
+                                    </div>
+                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
+                                        Boxy ultra
+                                    </h5>
+                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
+
+                                        <div class="flex flex-col gap-4 w-full">
+
+                                            <!-- Selects -->
+                                            <div class="flex gap-4 w-full">
+
+                                                <!-- Color -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
+                                                    <select
+                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>Negra</option>
+                                                        <option>Blanca</option>
+                                                        <option>Gris</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Talle -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
+                                                    <select
+                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>S</option>
+                                                        <option>M</option>
+                                                        <option>L</option>
+                                                        <option>XL</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
+
+                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
+                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
+                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                                            </svg>
+                                            Agregar a carrito
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div
+                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
+                                <a href="#">
+                                    <img src="files/img/mod-9.jpeg" class=" w-full object-cover p-1" />
+                                </a>
+                                <div>
+                                    <div class="flex items-center space-x-3 p-3">
+                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                fill="currentColor" viewBox="0 0 24 24">
+                                                <path
+                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
+                                            </svg>
+                                        </div>
+                                        <span
+                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
+                                            out of 5</span>
+                                    </div>
+                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
+                                        Boxy ultra
+                                    </h5>
+                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
+
+                                        <div class="flex flex-col gap-4 w-full">
+
+                                            <!-- Selects -->
+                                            <div class="flex gap-4 w-full">
+
+                                                <!-- Color -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
+                                                    <select
+                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>Negra</option>
+                                                        <option>Blanca</option>
+                                                        <option>Gris</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Talle -->
+                                                <div class="flex flex-col w-1/2">
+                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
+                                                    <select
+                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
+                                                        <option>S</option>
+                                                        <option>M</option>
+                                                        <option>L</option>
+                                                        <option>XL</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
+
+                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
+                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
+                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                                viewBox="0 0 24 24">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2"
+                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                                            </svg>
+                                            Agregar a carrito
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next text-white"></div>
+                        <div class="swiper-button-prev text-white"></div>
+                    </div>
                 </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Ayuda</h2>
-                    <ul class="text-white font-medium">
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Discord</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Instagram</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Facebook</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Contacto</a>
-                        </li>
-                    </ul>
+                <div class="swiper-slide !w-[280px]">
                 </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Legal</h2>
-                    <ul class="text-white font-medium">
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Privacidad</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Licencias</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Terminos &amp; condiciones</a>
-                        </li>
-                    </ul>
+                <div class="arrow1">
+                    <a href="#products"><img
+                            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+                            src="img/arrow-next-slide.png" alt=""></a>
                 </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-white uppercase">Contenido</h2>
-                    <ul class="text-white font-medium">
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Ofertas</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Nuevos lanzamientos</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Vieja temporada</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Cuero</a>
-                        </li>
-                    </ul>
+
+        </section>
+        <div tabindex="-1" aria-hidden="true"
+            class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+            id="modal">
+            <div class="modal-content relative p-4 w-full max-w-md max-h-full">
+                <div class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6">
+                    <h2 class="text-center">Tu carrito</h2>
+
+                    <li id="resumen"></li>
+
+                    <p>
+                        Para más información y mayor seguridad, te recomendamos continuar por
+                        WhatsApp
+                        con un agente especializado y finalizar tu compra allí.
+                    </p>
+                    <button type="submit" onclick="enviarWhatsApp()"
+                        class="w-full bg-[#128C7E] rounded-xl inline-flex items-center justify-center text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+                        Seguir en WhatsApp
+                        <svg class="w-4 h-4 ms-1.5 -me-0.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 12H5m14 0-4 4m4-4-4-4" />
+                        </svg>
+                    </button>
+                    <br><br>
+                    <button type="submit" onclick="cerrarCarrito()"
+                        class="w-full bg-[red] rounded-xl inline-flex items-center justify-center text-white bg-brand hover:bg-brand-strong box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none">
+                        Cerrar
+                    </button>
+
                 </div>
             </div>
-            <div class="px-4 py-6 bg-neutral-secondary-soft md:flex md:items-center md:justify-center">
-                <span class="text-sm text-white sm:text-center">© 2025 <a target="_blank" href="kevinflores.me">Designed
-                        by Confiweb Studio</a>. <br>All
-                    Rights Reserved.
-                </span>
-            </div>
+
         </div>
-
-
-
-
-
-
-        
-    </footer>
-    
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            loop: true,
-            spaceBetween: 20,
-            autoplay: {
-                delay: 3000,
-            },
-            breakpoints: {
-                0: {
-                    slidesPerView: 2, // MOBILE → 2 CARDS
-                },
-                768: {
-                    slidesPerView: 3, // DESKTOP → 3 CARDS
-                }
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
-    </script>
 
     <div class="arrowUp transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
         id="arrowUp">
@@ -249,54 +683,10 @@
             href="https://wa.me/5491128334733?text=Hola!%20Me%20gustó%20un%20producto%20de%20la%20tienda%20online..."><i
                 class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 fa-brands fa-whatsapp"></i></a>
     </div>
-    <script>
-        window.addEventListener("scroll", () => {
-            const scroll = document.documentElement.scrollTop;
-            if (scroll > 100) {
-                arrowUp.style.right = 20 + "px";
-            } else {
-                arrowUp.style.right = -100 + "px";
-            }
-        })
-        window.addEventListener("scroll", () => {
-            const scroll = document.documentElement.scrollTop;
-            if (scroll > 100) {
-                contactMe.style.left = 20 + "px";
-            } else {
-                contactMe.style.left = -100 + "px";
-            }
-        })
-        const track = document.getElementById("carousel-track");
-        const next = document.getElementById("next-btn");
-        const prev = document.getElementById("prev-btn");
+    <div id="toast" class="fixed bottom-5 right-5 z-[9999] hidden">
 
-        let index = 0;
-
-        function moveCarousel() {
-            index = (index + 1) % 2;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        next.addEventListener("click", () => {
-            index = (index + 1) % 2;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        });
-
-        prev.addEventListener("click", () => {
-            index = (index - 1 + 2) % 2;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        });
-        setInterval(moveCarousel, 2500);
-    </script>
-
-    <script src="scripts/script.js"></script>
-    <script src="scripts/content-confiweb.js"></script>
-
-    <script>
-        tailwind.config = {
-            plugins: [daisyui],
-        }
-    </script>
+    </div>
+    <script src="scripts/script.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
@@ -314,13 +704,7 @@
             delay: 0.4
         });
     </script>
+
 </body>
 
 </html>
-
-
-
-
-
-
-

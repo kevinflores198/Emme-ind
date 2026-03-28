@@ -14,9 +14,20 @@ body {
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.511);
 }
 
+#introduction{
+  background: linear-gradient(180deg, var(--background-color), #252525e1);
+}
+
 #carousel {
     padding-top: 6rem;
     padding-bottom: 5rem;
+}
+
+.line{
+    width: 60px;
+    margin: 0 auto;
+    height: 8px;
+    background: var(--primary-color);
 }
 
 #carousel .content {
@@ -63,18 +74,18 @@ button {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 2000;
+  background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 
 .modal-content {
-  background: #fff;
+  background: white;
   padding: 20px;
-  width: 90%;
+  border-radius: 10px;
   max-width: 400px;
-  border-radius: 8px;
+  width: 90%;
 }
 
 .item {
@@ -88,3 +99,4 @@ button {
   cursor: pointer;
   margin-top: 5px;
 }
+
