@@ -82,8 +82,6 @@ btn.addEventListener("click", () => {
         btn.textContent === "Ver más" ? "Ver menos" : "Ver más";
 });
 
-
-
 function guardar() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
     actualizarContador();
@@ -224,6 +222,5 @@ function eliminarProducto(id) {
     guardar();
     renderCarrito();
 }
-
 
 actualizarContador();

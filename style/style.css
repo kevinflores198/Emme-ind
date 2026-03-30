@@ -100,3 +100,26 @@ button {
   margin-top: 5px;
 }
 
+.message{
+  display: flex;
+  align-items: center;
+  height: 60vh;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center
+}
+
+.message h2{
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.message img{
+  width: 300px;
+}
+
+.cta li{
+  list-style: lower-greek;
+}
