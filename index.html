@@ -40,70 +40,64 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-
 <body>
     <nav class="nav2 w-full bg-black text-center text-sm text-white py-2 sticky top-0 left-0 right-0 z-50">
         <a href="carousel">¡Descuentos en 3 prendas a partir de Abril!</a>
     </nav>
-    <nav class="w-full bg-[#FFD900] sticky top-0 left-0 right-0 z-50">
-        <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4">
-            <a href="#hero" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span
-                    class="transition delay-150 duration-300 ease-in-out hover:text-[#F58549] hover:scale-110 self-center text-xl text-black text-heading font-semibold whitespace-nowrap"><img
-                        src="files/img/logo-no-back-black.png" alt="logo" class="w-16"></span>
+    <nav class="w-full bg-[#FFD900] sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
+
+            <!-- LOGO -->
+            <a href="#hero" class="flex items-center">
+                <img src="files/img/logo-no-back-black.png" class="w-16" />
             </a>
-            <div class="inline-flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                <button type="button" onclick="abrirCarrito()" class="cart-btn transition delay-150 
-                    duration-300 ease-in-out hover:text-[#252525]
-                     hover:scale-110 rounded-lg text-black bg-[#ffd900]
-                      hover:bg-[#fff09b] box-border border-transparent 
-                      focus:ring-4 focus:ring-brand-medium shadow-xs 
-                      font-medium leading-5 rounded-base text-sm px-3 
-                      py-2 focus:outline-none">
-                    <i class="fa-solid fa-cart-arrow-down">
-                    </i><span id="contador" class="count">0</span>
+
+            <!-- MENU (DESKTOP) -->
+            <ul class="hidden md:flex items-center gap-8 font-medium">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#carousel">Productos</a></li>
+                <li><a href="#about">Nosotros</a></li>
+            </ul>
+
+            <!-- DERECHA -->
+            <div class="flex items-center gap-2">
+
+                <!-- CARRITO -->
+                <button onclick="abrirCarrito()"
+                    class="relative flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#fff09b] transition">
+
+                    <i class="fa-solid fa-cart-arrow-down text-black"></i>
+
+                    <span id="contador"
+                        class="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1.5 rounded-full">
+                        0
+                    </span>
                 </button>
-                <button data-collapse-toggle="navbar-cta" type="button"
-                    class="inline-flex items-center p-2 w-9 h-9 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
-                    aria-controls="navbar-cta" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-width="2"
-                            d="M5 7h14M5 12h14M5 17h14" />
+
+                <!-- HAMBURGUESA (solo mobile) -->
+                <button data-collapse-toggle="navbar-cta"
+                    class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-[#fff09b]">
+
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <path stroke="currentColor" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
                     </svg>
                 </button>
+
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-                <ul class="font-medium flex flex-col 
-                    p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft
-                     md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
-                    <li>
-                        <a href="#hero" class="transition delay-150 
-                            duration-300 ease-in-out hover:scale-110
-                             block py-2 px-3 text-black bg-brand rounded md:bg-transparent
-                              md:text-fg-brand md:p-0">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="#carousel" class="transition delay-150 
-                            duration-300 ease-in-out hover:scale-110
-                             block py-2 px-3 text-black rounded hover:bg-neutral-tertiary 
-                             md:hover:bg-transparent md:border-0 md:hover:text-fg-brand 
-                             md:p-0 md:dark:hover:bg-transparent">Productos</a>
-                    </li>
-                    <li>
-                        <a href="#about" class="transition delay-150 
-                            duration-300 ease-in-out hover:scale-110
-                             block py-2 px-3 text-black rounded hover:bg-neutral-tertiary 
-                             md:hover:bg-transparent md:border-0 md:hover:text-fg-brand 
-                             md:p-0 md:dark:hover:bg-transparent">Nosotros</a>
-                    </li>
-                </ul>
-            </div>
+
+        </div>
+
+        <!-- MENU MOBILE -->
+        <div id="navbar-cta" class="hidden md:hidden bg-[var(--primary-color)]">
+            <ul class="flex flex-col p-4 gap-3">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#carousel">Productos</a></li>
+                <li><a href="#about">Nosotros</a></li>
+            </ul>
         </div>
     </nav>
     <main>
-        <section id="hero" class="items-center flex flex-col gap-6 px-4 py-20 pt-20">
+        <section id="hero" class="items-center flex flex-col gap-6 px-4 py-20 pt-20 sm:mt-[-4rem]">
             <h1 data-aos="zoom-in"
                 class="text-[#d9d9d9]  mb-4 text-4xl font-bold tracking-tight text-heading md:text-4xl lg:text-8xl">
                 Elegi destacar
@@ -124,19 +118,21 @@
 
             <div class="relative z-10 h-full flex flex-col items-center justify-center text-white">
                 <div class="line mb-8"></div>
-                <h1 data-aos="zoom-in"
-                    class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-4xl font-semibold">
+                <h1 data-aos="zoom-in" class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-4xl font-semibold
+                    sm:text-4xl lg:text-6xl text-center">
                     Calidad que se nota. Estilo que se siente</h1>
-                <p data-aos="zoom-in"
-                    class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg">
+                <p data-aos="zoom-in" class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg
+                    sm:text-lg lg:text-2xl text-center max-w-2xl">
                     Diseños pensados para quienes quieren vestir diferente, sin perder comodidad.
                 </p>
-                <h2 class="text-2xl mt-2 mt-6">
+                <h2 class="text-2xl mt-2 mt-6
+                sm:text-2xl lg:text-4xl text-center max-w-2xl" data-aos="zoom-in">
                     En EMME trabajamos con telas premium y cortes modernos para que cada prenda combine comodidad y
                     presencia.</h2>
                 <button data-aos="zoom-in"
                     onclick="window.open('https://wa.me/5491128334733?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20los%20productos%20de%20LAZO.%20%C2%BFMe%20podr%C3%ADas%20ayudar?', '_blank');"
-                    class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-8 bg-[#FFD900] hover:bg-[#FFF09B] text-[#2F0C02] px-6 py-3 rounded-lg font-medium hover:opacity-90">
+                    class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-8 bg-[#FFD900] hover:bg-[#FFF09B] text-[#2F0C02] px-6 py-3 rounded-lg font-medium hover:opacity-90
+                    sm:text-lg lg:text-xl focus:ring-4 focus:ring-[#FFD900]/50 focus:outline-none">
                     Contacto via WhatsApp
             </div>
 
@@ -156,43 +152,6 @@
                                     <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
                                 </a>
                                 <div>
-                                    <div class="flex items-center space-x-3 p-3">
-                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                        </div>
-                                        <span
-                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                            out of 5</span>
-                                    </div>
                                     <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
                                         Boxy ultra
                                     </h5>
@@ -251,43 +210,6 @@
                                     <img src="files/img/mod-2.jpeg" class=" w-full object-cover p-1" />
                                 </a>
                                 <div>
-                                    <div class="flex items-center space-x-3 p-3">
-                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                        </div>
-                                        <span
-                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                            out of 5</span>
-                                    </div>
                                     <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
                                         Boxy ultra
                                     </h5>
@@ -347,43 +269,7 @@
                                     <img src="files/img/mod-3.jpeg" class=" w-full object-cover p-1" />
                                 </a>
                                 <div>
-                                    <div class="flex items-center space-x-3 p-3">
-                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                        </div>
-                                        <span
-                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                            out of 5</span>
-                                    </div>
+
                                     <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
                                         Boxy ultra
                                     </h5>
@@ -442,43 +328,7 @@
                                     <img src="files/img/mod-5.jpeg" class=" w-full object-cover p-1" />
                                 </a>
                                 <div>
-                                    <div class="flex items-center space-x-3 p-3">
-                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                        </div>
-                                        <span
-                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                            out of 5</span>
-                                    </div>
+
                                     <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
                                         Boxy ultra
                                     </h5>
@@ -537,43 +387,6 @@
                                     <img src="files/img/mod-9.jpeg" class=" w-full object-cover p-1" />
                                 </a>
                                 <div>
-                                    <div class="flex items-center space-x-3 p-3">
-                                        <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                fill="currentColor" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                            </svg>
-                                        </div>
-                                        <span
-                                            class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                            out of 5</span>
-                                    </div>
                                     <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
                                         Boxy ultra
                                     </h5>
@@ -633,15 +446,11 @@
                 </div>
                 <div class="swiper-slide !w-[280px]">
                 </div>
-                <div class="arrow1">
-                    <a href="#products"><img
-                            class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-                            src="img/arrow-next-slide.png" alt=""></a>
-                </div>
 
         </section>
         <div tabindex="-1" aria-hidden="true"
-            class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+            class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full
+            sm:h-full p-6"
             id="modal">
             <div class="modal-content relative p-4 w-full max-w-md max-h-full">
                 <div class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6">
@@ -675,1904 +484,25 @@
         </div>
         <section class="bg-[var(--secondary-color)] pt-20" id="products">
             <div class="line"></div>
-            <h2 data-aos="fade-up" class="text-white w-full py-10 text-4xl text-center">Todos los productos</h2>
-            <div
-                class="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4">
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
+            <h2 data-aos="fade-up" class="text-[var(--text-color)] w-full py-10 text-4xl text-center">Todos los
+                productos</h2>
 
-                            <div class="flex flex-col gap-4 w-full">
+            <!-- Here is going to be the product linked from Google sheets -->
 
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-                <div
-                    class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                    <a href="#">
-                        <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                    </a>
-                    <div>
-                        <div class="flex items-center space-x-3 p-3">
-                            <div class="flex items-center space-x-1 rtl:space-x-reverse ">
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                                <svg class="w-5 h-5 text-fg-yellow" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z" />
-                                </svg>
-                            </div>
-                            <span
-                                class="bg-brand-softer border border-brand-subtle text-fg-brand-strong text-xs font-medium px-1.5 py-0.5 rounded-sm">4.8
-                                out of 5</span>
-                        </div>
-                        <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                            Boxy ultra
-                        </h5>
-                        <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                            <div class="flex flex-col gap-4 w-full">
-
-                                <!-- Selects -->
-                                <div class="flex gap-4 w-full">
-
-                                    <!-- Color -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Color</label>
-                                        <select
-                                            class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>Negra</option>
-                                            <option>Blanca</option>
-                                            <option>Gris</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Talle -->
-                                    <div class="flex flex-col w-1/2">
-                                        <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                        <select
-                                            class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                            <option>S</option>
-                                            <option>M</option>
-                                            <option>L</option>
-                                            <option>XL</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                            <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                <svg class="w-4 h-4 me-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                </svg>
-                                Agregar a carrito
-                            </button>
-                        </div>
-
-                    </div>
-                </div>
-
-                <br><br>
+            <div id="productos"
+                class="cards grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-2 sm:px-4">
             </div>
+            <br><br>
         </section>
-
         <section id="benefits" class="benefits bg-[var(--primary-color)]">
             <div class="items-center">
                 <div class="message" data-aos="fade-up">
-                    <img src="files/img/logo-no-back-black.png" alt="Solución">
-                    <h2 id="" class="">no es tendencia.</h2>
-                    <h2>Es identidad</h2>
+                    <img src="files/img/logo-no-back-black.png" alt="Solución" class="">
+                    <h2 id="" class="sm:text-4xl text-center">no es tendencia.</h2>
+                    <h2 class="sm:text-[1rem] text-center">Es identidad</h2>
                 </div>
             </div>
         </section>
-
         <section id="cta" class="relative w-full h-[100vh] overflow-hidden">
 
             <video autoplay muted playsinline loop class="video absolute inset-0 w-full h-full object-cover">
@@ -2600,7 +530,8 @@
                         Finalizá por WhatsApp con atención personalizada
                     </li>
                 </div>
-                <h3 class="text-[2rem]" data-aos="zoom-in">Te acompañamos en cada paso para que tu compra sea simple, rápida y segura.</h3>
+                <h3 class="text-[2rem]" data-aos="zoom-in">Te acompañamos en cada paso para que tu compra sea simple,
+                    rápida y segura.</h3>
                 <button data-aos="zoom-in"
                     onclick="window.open('https://wa.me/5491128334733?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20los%20productos%20de%20LAZO.%20%C2%BFMe%20podr%C3%ADas%20ayudar?', '_blank');"
                     class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-6 bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] text-[#2F0C02] font-bold px-6 py-3 rounded-lg font-medium hover:opacity-90">
@@ -2617,7 +548,7 @@
                     <ul class="text-[#252525] font-medium">
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class=" hover:underline">Sobre nosotros</a>
+                            <a href="#introduction" class=" hover:underline">Sobre nosotros</a>
                         </li>
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
@@ -2625,11 +556,11 @@
                         </li>
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Compra</a>
+                            <a href="#cta" class="hover:underline">Compra</a>
                         </li>
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Blog</a>
+                            <a href="#hero" class="hover:underline">Inicio</a>
                         </li>
                     </ul>
                 </div>
@@ -2642,7 +573,8 @@
                         </li>
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Instagram</a>
+                            <a href="https://www.instagram.com/emme.wear.ar?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                                target="_blank" class="hover:underline">Instagram</a>
                         </li>
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
@@ -2650,7 +582,8 @@
                         </li>
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Contacto</a>
+                            <a href="#" class="hover:underline"
+                                onclick="window.open('https://wa.me/5491128334733?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20los%20productos%20de%20EMME.%20%C2%BFMe%20podr%C3%ADas%20ayudar?', '_blank');">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -2676,25 +609,22 @@
                     <ul class="text-[#252525]  font-medium">
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Ofertas</a>
+                            <a href="#carousel" class="hover:underline">Ofertas</a>
                         </li>
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Nuevos lanzamientos</a>
+                            <a href="#carousel" class="hover:underline">New in</a>
                         </li>
                         <li
                             class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Vieja temporada</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Cuero</a>
+                            <a href="#products" class="hover:underline">Todo</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="px-4 py-6 bg-neutral-secondary-soft md:flex md:items-center md:justify-center">
-                <span class="text-sm text-[#252525]  sm:text-center">© 2025 <a target="_blank" href="kevinflores.me">Designed
+                <span class="text-sm text-[#252525]  sm:text-center">© 2026 <a target="_blank"
+                        href="kevinflores.me">Designed
                         by Confiweb Studio</a>. <br>All
                     Rights Reserved.
                 </span>
@@ -2702,22 +632,20 @@
         </div>
     </footer>
 
-    <!-- <div class="arrowUp transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+    <div class="arrowUp transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
         id="arrowUp">
         <a href="#top"><i class="fa-solid fa-arrow-up arrow-confiweb"></i></a>
     </div>
     <div class="contactMe" id="contactMe">
         <a target="_blank"
-            href="https://wa.me/5491128334733?text=Hola!%20Me%20gustó%20un%20producto%20de%20la%20tienda%20online..."><i
+            href="https://wa.me/5491138880864?text=Hola!%20Me%20gustó%20un%20producto%20de%20la%20tienda%20online...%20Me%20ayudas?"><i
                 class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 fa-brands fa-whatsapp"></i></a>
-    </div> -->
-    <div id="toast" class="fixed bottom-5 right-5 z-[9999] hidden">
-
     </div>
+    <div id="toast" class="fixed bottom-5 right-5 z-[9999] hidden"></div>
+
     <script src="scripts/script.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-    <script src="/node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.2/dist/simpleParallax.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

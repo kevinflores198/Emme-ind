@@ -4,6 +4,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #hero {
   background-image: url("/files/img/hero.png");
   width: 100%;
@@ -12,30 +16,35 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.511);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
-#introduction{
+#introduction {
   background: linear-gradient(180deg, var(--background-color), #252525e1);
 }
 
 #carousel {
-    padding-top: 6rem;
-    padding-bottom: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 5rem;
 }
 
-.line{
-    width: 60px;
-    margin: 0 auto;
-    height: 8px;
-    background: var(--primary-color);
+.line {
+  width: 60px;
+  margin: 0 auto;
+  height: 8px;
+  background: var(--primary-color);
 }
 
 #carousel .content {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 #carousel img {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 .logo {
@@ -74,7 +83,7 @@ button {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -100,7 +109,7 @@ button {
   margin-top: 5px;
 }
 
-.message{
+.message {
   display: flex;
   align-items: center;
   height: 60vh;
@@ -109,17 +118,81 @@ button {
   align-content: center
 }
 
-.message h2{
+.message h2 {
   font-size: 4rem;
   font-weight: 900;
   margin-bottom: 1rem;
   margin-left: 1rem;
 }
 
-.message img{
+.message img {
   width: 300px;
 }
 
-.cta li{
+.cta li {
   list-style: lower-greek;
+}
+
+
+.arrowUp {
+  position: fixed;
+  width: 40px;
+  right: -100px;
+  bottom: 20px;
+  transition: all 0.5s;
+
+}
+
+.arrowUp .fa-solid {
+  border: 1px solid var(--hover);
+  background: linear-gradient(135deg,
+      var(--primary-color),
+      var(--secondary-color));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text);
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 8px 10px 5px rgba(0, 0, 0, 0.328);
+  transition: all 0.5s;
+}
+
+.arrowUp .fa-solid:hover {
+  background-color: #1E40AF;
+}
+
+.arrowUp .fa-solid:active {
+  background-color: #4765c7;
+}
+
+.contactMe {
+  position: fixed;
+  width: 40px;
+  right: -100px;
+  bottom: 20px;
+  transition: all 0.5s;
+}
+
+.contactMe .fa-brands {
+  background-color: #25D366;
+  color: black;
+  align-items: center;
+  padding: 10px;
+  border-radius: 100%;
+  box-shadow: 8px 10px 5px rgba(0, 0, 0, 0.328);
+  transition: all 0.5s;
+  font-size: 40px;
+}
+
+.contactMe .fa-brands:hover {
+  background-color: #09f55f;
+}
+
+.contactMe .fa-brands:active {
+  background-color: #61ce89;
 }

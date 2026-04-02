@@ -20,6 +20,9 @@ var swiper = new Swiper(".mySwiper", {
     },
 });
 
+const arrowUp = document.getElementById("arrowUp");
+const contactMe = document.getElementById("contactMe");
+
 window.addEventListener("scroll", () => {
     const scroll = document.documentElement.scrollTop;
     if (scroll > 100) {
@@ -42,44 +45,6 @@ window.addEventListener("scroll", () => {
     } else {
         contactMe.style.left = -100 + "px";
     }
-});
-
-const track = document.getElementById("carousel-track");
-const next = document.getElementById("next-btn");
-const prev = document.getElementById("prev-btn");
-
-let index = 0;
-
-function moveCarousel() {
-    index = (index + 1) % 2;
-    track.style.transform = `translateX(-${index * 100}%)`;
-}
-
-next.addEventListener("click", () => {
-    index = (index + 1) % 2;
-    track.style.transform = `translateX(-${index * 100}%)`;
-});
-
-prev.addEventListener("click", () => {
-    index = (index - 1 + 2) % 2;
-    track.style.transform = `translateX(-${index * 100}%)`;
-});
-setInterval(moveCarousel, 2500);
-
-tailwind.config = {
-    plugins: [daisyui],
-}
-
-const btn = document.getElementById("verMasBtn");
-const hiddenProducts = document.querySelectorAll(".hiddenn");
-
-btn.addEventListener("click", () => {
-    hiddenProducts.forEach(product => {
-        product.classList.toggle("hiddenn");
-    });
-
-    btn.textContent =
-        btn.textContent === "Ver más" ? "Ver menos" : "Ver más";
 });
 
 function guardar() {
@@ -221,6 +186,97 @@ function eliminarProducto(id) {
     carrito = carrito.filter(p => p.id !== id);
     guardar();
     renderCarrito();
+}
+
+const URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTuABS33PBRC0grHK2viW6coX_knf0D0W5C9sNWnJN8ZC4omF8aKDdheJlUkLWJKReoD5so84ZcIf4o/pub?output=csv";
+
+fetch(URL)
+    .then(res => res.text())
+    .then(data => {
+        console.log(data);
+        const filas = data.split("\n")
+            .slice(1)
+            .filter(f => f.trim() !== "");
+
+        const productos = filas.map(fila => {
+            const columnas = fila.split(",");
+
+            if (columnas.length < 6) return null;
+
+            const [id, nombre, precio, color, talle, imagen] = columnas;
+
+            return {
+                id,
+                nombre,
+                precio,
+                colores: color.split("|"),
+                talles: talle.split("|"),
+                imagen
+            };
+        }).filter(p => p !== null);;
+
+        console.log(productos);
+        renderProductos(productos);
+    });
+
+function renderProductos(productos) {
+    const contenedor = document.getElementById("productos");
+    contenedor.innerHTML = "";
+
+    productos.forEach(p => {
+
+        const coloresHTML = p.colores.map(c => `<option>${c}</option>`).join("");
+        const tallesHTML = p.talles.map(t => `<option>${t}</option>`).join("");
+
+        contenedor.innerHTML += `
+    
+    <div class="card rounded-xl bg-[#D9D9D9] w-full max-w-sm shadow">
+
+        <img src="${p.imagen}" class="w-full object-cover p-1 rounded-lg"/>
+
+        <div class="p-3">
+
+            <!-- nombre -->
+            <h5 class="text-xl text-center font-semibold">${p.nombre}</h5>
+
+            <!-- selects -->
+            <div class="flex flex-col gap-4 mt-4">
+
+                <div class="flex gap-4">
+
+                    <div class="flex flex-col w-1/2">
+                        <label class="text-sm text-gray-600 mb-1">Color</label>
+                        <select class="color w-full px-3 py-2 rounded-lg border border-gray-300 text-sm">
+                            ${coloresHTML}
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col w-1/2">
+                        <label class="text-sm text-gray-600 mb-1">Talle</label>
+                        <select class="talle w-full px-3 py-2 rounded-lg border border-gray-300 text-sm">
+                            ${tallesHTML}
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- precio -->
+                <span class="text-3xl font-extrabold text-center">$${p.precio}</span>
+
+                <!-- botón -->
+                <button 
+                        onclick="agregarAlCarrito(this, '${p.nombre}')"
+                        data-precio="${p.precio}"
+                        data-id="${p.id}"
+                        >
+                    Agregar al carrito
+                </button>
+
+            </div>
+        </div>
+    </div>
+    `;
+    });
 }
 
 actualizarContador();
