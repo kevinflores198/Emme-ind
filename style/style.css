@@ -129,8 +129,29 @@ button {
   width: 300px;
 }
 
+@media (max-width: 768px) {
+  .message h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .message img {
+    width: 200px;
+    margin-bottom: 1rem;
+  }
+}
+
 .cta li {
   list-style: lower-greek;
+}
+
+.cta-class h1{
+  font-size: 3rem;
+}
+
+.cta-class li{
+  font-size: 1.3rem;
 }
 
 
