@@ -137,7 +137,7 @@
             <div class="line"></div>
             <h2 data-aos="fade-up"
                 class="w-full py-10 text-4xl text-center text-[#EBE3D0] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-4xl font-semibold">
-                New in</h2>
+                Modelos exclusivos</h2>
             <div class="max-w-[1100px] mx-auto px-4">
                 <div class="content w-full  py-10">
                     <div data-aos="zoom-in" class="swiper mySwiper py-10">
@@ -271,7 +271,7 @@
                 </div>
             </div>
         </section>
-        <section id="cta" class="relative w-full overflow-hidden h-[70vh] flex items-center justify-center">
+        <section id="cta" class="relative w-full overflow-hidden h-[80vh] flex items-center justify-center">
             <video autoplay muted playsinline loop webkit-playsinline
                 class="video absolute inset-0 w-full h-full object-cover">
                 <source src="files/videos/video-switch.mp4" type="video/mp4">
@@ -313,7 +313,7 @@
 
         </section>
     </main>
-    <footer class="bg-[#D9D9D9]">
+    <footer id="footer" class="bg-[#D9D9D9]">
         <div class="mx-auto w-full max-w-screen-xl">
             <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
                 <div class="text-center">
@@ -362,19 +362,12 @@
                 </div>
                 <div class="text-center">
                     <h2 class="mb-6 text-sm font-semibold text-[#252525]  uppercase">Legal</h2>
-                    <ul class="text-[#252525]  font-medium">
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Privacidad</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Licencias</a>
-                        </li>
-                        <li
-                            class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                            <a href="#" class="hover:underline">Terminos &amp; condiciones</a>
-                        </li>
+                    <ul class="text-[#252525]  font-medium flex flex-col text-center">
+                        <a href="#footer" onclick="abrirModal('privacidad')" class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">Privacidad</a>
+
+                        <a href="#footer" onclick="abrirModal('licencias')" class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">Licencias</a>
+
+                        <a href="#footer" onclick="abrirModal('terminos')" class="mb-4 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">Términos</a>
                     </ul>
                 </div>
                 <div class="text-center">
@@ -402,6 +395,24 @@
                     Rights Reserved.
                 </span>
             </div>
+        </div>
+        <div id="modalLegal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+
+            <div class="bg-white rounded-xl max-w-lg w-full p-6 relative">
+
+                <!-- Botón cerrar -->
+                <button onclick="cerrarModal()" class="absolute top-3 right-3 text-gray-500 hover:text-black">
+                    ✖
+                </button>
+
+                <!-- Título -->
+                <h2 id="modalTitulo" class="text-xl font-bold mb-4"></h2>
+
+                <!-- Contenido -->
+                <div id="modalContenido" class="text-sm text-gray-700 space-y-2 max-h-[400px] overflow-y-auto"></div>
+
+            </div>
+
         </div>
     </footer>
 

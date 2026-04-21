@@ -281,3 +281,51 @@ function renderProductos(productos) {
 }
 
 actualizarContador();
+
+function abrirModal(tipo) {
+    const modal = document.getElementById("modalLegal");
+    const titulo = document.getElementById("modalTitulo");
+    const contenido = document.getElementById("modalContenido");
+
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+
+    if (tipo === "terminos") {
+        titulo.innerText = "Términos y Condiciones";
+        contenido.innerHTML = `
+        <p>1. Los productos ofrecidos en este sitio están sujetos a disponibilidad.</p>
+        <p>2. Las compras se gestionan a través de WhatsApp.</p>
+        <p>3. Los precios pueden modificarse sin previo aviso.</p>
+        <p>4. No nos responsabilizamos por errores en la carga de productos o precios.</p>
+        `;
+    }
+
+    if (tipo === "privacidad") {
+        titulo.innerText = "Política de Privacidad";
+        contenido.innerHTML = `
+        <p>1. No recopilamos datos personales sin consentimiento.</p>
+        <p>2. La información compartida por WhatsApp es privada y no se comparte con terceros.</p>
+        <p>3. Solo usamos los datos para gestionar compras.</p>
+        `;
+    }
+
+    if (tipo === "licencias") {
+        titulo.innerText = "Licencias";
+        contenido.innerHTML = `
+        <p>1. Las imágenes y contenido pertenecen a la marca.</p>
+        <p>2. No está permitida la reproducción sin autorización.</p>
+        `;
+    }
+}
+
+function cerrarModal() {
+    const modal = document.getElementById("modalLegal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+}
+
+document.getElementById("modalLegal").addEventListener("click", (e) => {
+    if (e.target.id === "modalLegal") {
+        cerrarModal();
+    }
+});
