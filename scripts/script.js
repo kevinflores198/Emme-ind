@@ -117,8 +117,6 @@ function renderCarrito() {
                     </div>
                 </div>
 
-                <div class="text-sm font-bold text-black">$17.000</div>
-
                 <!-- Botón eliminar -->
                 <button onclick="event.preventDefault(); eliminarProducto(${item.id})"
                     class="text-red-500 hover:text-red-700 text-sm">
@@ -230,14 +228,14 @@ function renderProductos(productos) {
 
         contenedor.innerHTML += `
     
-    <div class="card rounded-xl bg-[#D9D9D9] w-full max-w-sm shadow">
+    <div class="card rounded-xl bg-[#D9D9D9] w-full max-w-sm shadow cursor-pointer overflow-hidden group">
 
-        <img src="${p.imagen}" class="w-full object-cover p-1 rounded-lg"/>
+        <img src="${p.imagen}" class="w-full object-cover p-1 rounded-lg transition duration-500 group-hover:scale-110"/>
 
         <div class="p-3">
 
             <!-- nombre -->
-            <h5 class="text-xl text-center font-semibold">${p.nombre}</h5>
+            <h5 class="text-xl text-center font-semibold pt-2">${p.nombre}</h5>
 
             <!-- selects -->
             <div class="flex flex-col gap-4 mt-4">
@@ -264,7 +262,10 @@ function renderProductos(productos) {
                 <span class="text-3xl font-extrabold text-center">$${p.precio}</span>
 
                 <!-- botón -->
-                <button 
+                <button class="w-full center transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-100
+                 w-40 rounded-lg items-center text-black bg-[#FFD900] hover:bg-[#fff09b] box-border border 
+                 border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs
+                  font-medium leading-5 rounded-base text-center px-2 py-3 focus:outline-none"
                         onclick="agregarAlCarrito(this, '${p.nombre}')"
                         data-precio="${p.precio}"
                         data-id="${p.id}"

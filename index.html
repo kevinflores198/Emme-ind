@@ -133,7 +133,7 @@
             </div>
 
         </section>
-        <!-- <section class="bg-[#252525] pt-20" id="carousel">
+        <section class="bg-[#252525] pt-20" id="carousel">
             <div class="line"></div>
             <h2 data-aos="fade-up"
                 class="w-full py-10 text-4xl text-center text-[#EBE3D0] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-4xl font-semibold">
@@ -143,295 +143,83 @@
                     <div data-aos="zoom-in" class="swiper mySwiper py-10">
                         <div class="swiper-wrapper">
                             <div
-                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                                <a href="#">
-                                    <img src="files/img/mod-10.jpeg" class=" w-full object-cover p-1" />
-                                </a>
-                                <div>
-                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                                        Boxy ultra
-                                    </h5>
-                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
+                                class="swiper-slide card relative h-80 rounded-xl overflow-hidden group cursor-pointer">
 
-                                        <div class="flex flex-col gap-4 w-full">
+                                <!-- Imagen -->
+                                <img src="files/img/mod-9.jpeg"
+                                    class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
-                                            <div class="flex gap-4 w-full">
+                                <!-- Overlay oscuro -->
+                                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition"></div>
 
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
-                                                    <select
-                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>Negra</option>
-                                                        <option>Blanca</option>
-                                                        <option>Gris</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                                    <select
-                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>S</option>
-                                                        <option>M</option>
-                                                        <option>L</option>
-                                                        <option>XL</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                                viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                            </svg>
-                                            Agregar a carrito
-                                        </button>
-                                    </div>
-
+                                <!-- Texto -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <h2 class="text-white text-2xl font-bold tracking-wide text-center px-4">
+                                        Boxy
+                                    </h2>
                                 </div>
+
                             </div>
                             <div
-                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                                <a href="#">
-                                    <img src="files/img/mod-2.jpeg" class=" w-full object-cover p-1" />
-                                </a>
-                                <div>
-                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                                        Boxy ultra
-                                    </h5>
-                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
+                                class="swiper-slide card relative h-80 rounded-xl overflow-hidden group cursor-pointer">
 
-                                        <div class="flex flex-col gap-4 w-full">
+                                <!-- Imagen -->
+                                <img src="files/img/over.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
-                                            <div class="flex gap-4 w-full">
+                                <!-- Overlay oscuro -->
+                                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition"></div>
 
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
-                                                    <select
-                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>Negra</option>
-                                                        <option>Blanca</option>
-                                                        <option>Gris</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                                    <select
-                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>S</option>
-                                                        <option>M</option>
-                                                        <option>L</option>
-                                                        <option>XL</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                                viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                            </svg>
-                                            Agregar a carrito
-                                        </button>
-                                    </div>
-
+                                <!-- Texto -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <h2 class="text-white text-2xl font-bold tracking-wide text-center px-4">
+                                        Oversize
+                                    </h2>
                                 </div>
-                            </div>
 
-                            <div
-                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                                <a href="#">
-                                    <img src="files/img/mod-3.jpeg" class=" w-full object-cover p-1" />
-                                </a>
-                                <div>
-
-                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                                        Boxy ultra
-                                    </h5>
-                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
-
-                                        <div class="flex flex-col gap-4 w-full">
-
-                                            <div class="flex gap-4 w-full">
-
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
-                                                    <select
-                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>Negra</option>
-                                                        <option>Blanca</option>
-                                                        <option>Gris</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                                    <select
-                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>S</option>
-                                                        <option>M</option>
-                                                        <option>L</option>
-                                                        <option>XL</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                                viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                            </svg>
-                                            Agregar a carrito
-                                        </button>
-                                    </div>
-
-                                </div>
                             </div>
                             <div
-                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                                <a href="#">
-                                    <img src="files/img/mod-5.jpeg" class=" w-full object-cover p-1" />
-                                </a>
-                                <div>
+                                class="swiper-slide card relative h-80 rounded-xl overflow-hidden group cursor-pointer">
 
-                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                                        Boxy ultra
-                                    </h5>
-                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
+                                <!-- Imagen -->
+                                <img src="files/img/clasic.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
-                                        <div class="flex flex-col gap-4 w-full">
+                                <!-- Overlay oscuro -->
+                                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition"></div>
 
-                                            <div class="flex gap-4 w-full">
-
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
-                                                    <select
-                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>Negra</option>
-                                                        <option>Blanca</option>
-                                                        <option>Gris</option>
-                                                    </select>
-                                                </div>
-
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                                    <select
-                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>S</option>
-                                                        <option>M</option>
-                                                        <option>L</option>
-                                                        <option>XL</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                                viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                            </svg>
-                                            Agregar a carrito
-                                        </button>
-                                    </div>
-
+                                <!-- Texto -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <h2 class="text-white text-2xl font-bold tracking-wide text-center px-4">
+                                        Clasicas
+                                    </h2>
                                 </div>
+
                             </div>
                             <div
-                                class="card rounded-xl bg-[#D9D9D9] swiper-slide w-full max-w-sm bg-neutral-primary-soft  border border-default rounded-base shadow-xs">
-                                <a href="#">
-                                    <img src="files/img/mod-9.jpeg" class=" w-full object-cover p-1" />
-                                </a>
-                                <div>
-                                    <h5 class="text-xl text-center text-heading font-semibold tracking-tight">Remera
-                                        Boxy ultra
-                                    </h5>
-                                    <div class="p-3 flex items-center justify-between flex-col gap-4">
+                                class="swiper-slide card relative h-80 rounded-xl overflow-hidden group cursor-pointer">
 
-                                        <div class="flex flex-col gap-4 w-full">
+                                <!-- Imagen -->
+                                <img src="files/img/babytee.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110">
 
-                                            <div class="flex gap-4 w-full">
+                                <!-- Overlay oscuro -->
+                                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition"></div>
 
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Color</label>
-                                                    <select
-                                                        class="color w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>Negra</option>
-                                                        <option>Blanca</option>
-                                                        <option>Gris</option>
-                                                    </select>
-                                                </div>
-                                                <div class="flex flex-col w-1/2">
-                                                    <label class="text-sm text-gray-600 mb-1">Talle</label>
-                                                    <select
-                                                        class="talle w-full px-3 py-2 rounded-lg border border-gray-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#ffd900] transition">
-                                                        <option>S</option>
-                                                        <option>M</option>
-                                                        <option>L</option>
-                                                        <option>XL</option>
-                                                    </select>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <span class="text-3xl font-extrabold text-heading">$17000</span>
-
-                                        <button type="button" onclick="agregarAlCarrito(this, 'Remera')"
-                                            class="boton rounded-xl inline-flex items-center  text-[var(--text-color)] bg-[var(--primary-color)] hover:bg-[var(--secondary-color)] box-border border border-transparent focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-3 py-2 focus:outline-none">
-                                            <svg class="w-4 h-4 me-1.5" aria-hidden="true"
-                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                                viewBox="0 0 24 24">
-                                                <path stroke="currentColor" stroke-linecap="round"
-                                                    stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
-                                            </svg>
-                                            Agregar a carrito
-                                        </button>
-                                    </div>
-
+                                <!-- Texto -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <h2 class="text-white text-2xl font-bold tracking-wide text-center px-4">
+                                        Baby tee
+                                    </h2>
                                 </div>
+
                             </div>
                         </div>
-                        <div class="swiper-button-next text-white"></div>
-                        <div class="swiper-button-prev text-white"></div>
                     </div>
-                </div>
-                <div class="swiper-slide !w-[280px]">
-                </div>
-
-        </section> -->
-        <div tabindex="-1" aria-hidden="true"
-            class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full
-            sm:h-full p-6"
-            id="modal">
+                    <div class="swiper-slide !w-[280px]"></div>
+        </section>
+        <div tabindex="-1" aria-hidden="true" class="modal hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full
+            sm:h-full p-6" id="modal">
             <div class="modal-content relative p-4 w-full max-w-md max-h-full">
                 <div class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6">
                     <h2 class="text-center">Tu carrito</h2>
@@ -484,36 +272,38 @@
             </div>
         </section>
         <section id="cta" class="relative w-full overflow-hidden h-[70vh] flex items-center justify-center">
-            <video autoplay muted playsinline loop webkit-playsinline class="video absolute inset-0 w-full h-full object-cover">
+            <video autoplay muted playsinline loop webkit-playsinline
+                class="video absolute inset-0 w-full h-full object-cover">
                 <source src="files/videos/video-switch.mp4" type="video/mp4">
             </video>
 
             <div class="absolute inset-0 bg-black/40"></div>
 
             <div class="cta-class relative z-10 h-full flex flex-col items-center justify-center text-white">
-                <h1 data-aos="zoom-in"
-                    class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-[5rem] font-bold
+                <h1 data-aos="zoom-in" class="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 text-[5rem] font-bold
                      lg:text-7xl text-center sm:text-4xl">
                     Compra facil, compra segura</h1>
                 <div class="p-6 sm:p-0 flex flex-col gap-4 items-center">
-                    <li data-aos="zoom-in"
-                        class=" text-[3rem] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg
+                    <li data-aos="zoom-in" class=" text-[3rem] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg
                         sm:text-lg lg:text-2xl ">
                         Elegí tus productos
                     </li>
 
-                    <li data-aos="zoom-in"
-                        class=" text-[3rem] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg 
+                    <li data-aos="zoom-in" class=" text-[3rem] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg 
                         sm:text-lg lg:text-2xl ">
                         Agregalos al carrito
                     </li>
-                    <li data-aos="zoom-in"
-                        class="text-[3rem] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg
+                    <li data-aos="zoom-in" class="text-[3rem] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg
                         sm:text-lg lg:text-2xl ">
                         Finalizá por WhatsApp
                     </li>
+                    <li data-aos="zoom-in" class="text-[3rem] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 mt-4 text-lg
+                        sm:text-lg lg:text-2xl ">
+                        Pagas al retirar, sin adelantos.
+                    </li>
                 </div>
-                <h3 class="text-[1.25rem] sm:text-lg text-center mt-6" data-aos="zoom-in">Te acompañamos en cada paso para que tu compra sea simple,
+                <h3 class="text-[1.25rem] sm:text-lg text-center mt-6" data-aos="zoom-in">Te acompañamos en cada paso
+                    para que tu compra sea simple,
                     rápida y segura.</h3>
                 <button data-aos="zoom-in"
                     onclick="window.open('https://wa.me/5491138880864?text=Hola!%20Quiero%20saber%20m%C3%A1s%20sobre%20los%20productos%20de%20LAZO.%20%C2%BFMe%20podr%C3%ADas%20ayudar?', '_blank');"
