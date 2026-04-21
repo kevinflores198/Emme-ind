@@ -171,7 +171,7 @@ function enviarWhatsApp() {
         mensaje += `• Talle: ${item.talle}\n\n`;
     });
 
-    const telefono = "5491123941362"; // cambiar por el número real
+    const telefono = "5491170656942"; // cambiar por el número real
     const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
     window.open(url, "_blank");
